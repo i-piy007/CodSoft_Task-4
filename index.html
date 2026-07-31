@@ -19,7 +19,7 @@
 
             </div>
             <div class="volume-div">
-                <div class="volume-up">
+                <div class="volume-img">
                 <img src="img/volume-up.png" alt="volume-up">
                 </div>
                 <input type="range" id="volume-range">
@@ -31,6 +31,15 @@
                 <h5 id="song-artist">Bhuvan Bam</h5>
             </div>
             <input type="range" id="song-duration">
+            <div class="controls">
+                <div class="prev-img"><img src="img/previous.png" alt="prev" id="prev-img" onclick="previous()">
+                </div>
+                <div class="play-pause"><img src="img/play.png" alt="play" id="play-pause" onclick="playPause()">
+                </div>
+                <div class="next-img"><img src="img/next.png" alt="next" id="next-img" onclick="next()">
+                </div>
+                
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
