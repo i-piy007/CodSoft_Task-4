@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="img/playlist.png" alt="playlist" id="playlist-img">
+        <h2>FEEL THE MUSIC</h2>
+        <img src="img/music.png" alt="music" id="music-img">
+
+    </header>
+    <main>
+        <div class="left">
+            <div class="song-image">
+
+            </div>
+            <div class="volume-div">
+                <div class="volume-up">
+                <img src="img/volume-up.png" alt="volume-up">
+                </div>
+                <input type="range" id="volume-range">
+            </div>
+        </div>
+        <div class="right">
+            <div class="details">
+                <h3 id="song-name">Safar</h3>
+                <h5 id="song-artist">Bhuvan Bam</h5>
+            </div>
+            <input type="range" id="song-duration">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
