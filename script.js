@@ -6,6 +6,9 @@ let volumeRange=document.querySelector("#volume-range")
 let volumeImg=document.querySelector("#volume-img")
 let songRange=document.querySelector("#song-duration")
 let musicAnim=document.querySelector("#musicanim")
+let playlistImg=document.querySelector("#playlist-img")
+let playlist=document.querySelector(".playlist")
+let playlistSong=document.querySelectorAll(".playlist-song")
 let index=1;
 let playingSong=false;
 let track=document.createElement("audio")
@@ -41,6 +44,7 @@ function loadTrack(index){
         songRange.max=track.duration;
         songRange.value=track.currentTime;
     },1000)
+    track.loop=true; //which plays the same song again
     track.load();
 }
 loadTrack(index);
@@ -99,6 +103,22 @@ function volume(){
         volumeImg.src="img/volume-up.png";
     }
 }
-function Duration(){
+function duration(){
     track.currentTime= songRange.value;
 }
+playlistImg.addEventListener("click",()=>{
+    playlist.classList.toggle("playlist-active");
+    if(playlist.classList.contains("playlist-active")){
+        playlistImg.src="img/cross.png";
+    }else{
+        playlistImg.src="img/playlist.png";
+    }
+})
+playlistSong.forEach((song,index)=>{
+    song.addEventListener("click",()=>{
+        loadTrack(index);
+        playSong();
+        playlist.classList.remove("playlist-active");//optional
+        playlistImg.src="img/playlist.png";
+    })
+})
