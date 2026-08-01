@@ -12,6 +12,7 @@ let playlistImg=document.querySelector("#playlist-img")
 let playlist=document.querySelector(".playlist")
 let playlistSong=document.querySelectorAll(".playlist-song")
 let index=0;
+let progressTimer;
 let playingSong=false;
 let track=document.createElement("audio")
 function formatTime(seconds){
@@ -69,7 +70,7 @@ function loadTrack(index){
     songRange.value=0;
     currentTimeText.innerHTML="0:00";
     totalTimeText.innerHTML="0:00";
-    setInterval(() =>{
+    progressTimer=setInterval(() =>{
         songRange.max=track.duration;
         songRange.value=track.currentTime;
         currentTimeText.innerHTML=formatTime(track.currentTime);
@@ -77,6 +78,20 @@ function loadTrack(index){
     },1000)
     track.loop=true; //which plays the same song again
     track.load();
+    clearInterval(progressTimer);
+progressTimer = setInterval(() => {
+    if (!isNaN(track.duration)) {
+        songRange.max = Math.floor(track.duration);
+
+        // Don't overwrite slider while user is dragging it
+        if (!songRange.matches(":active")) {
+            songRange.value = track.currentTime;
+        }
+
+        currentTimeText.innerHTML = formatTime(track.currentTime);
+        totalTimeText.innerHTML = formatTime(track.duration);
+    }
+}, 250);
 }
 loadTrack(index);
 
@@ -135,8 +150,8 @@ function volume(){
     }
 }
 function duration(){
-    track.currentTime= songRange.value;
-    currentTimeText.innerHTML=formatTime(track.currentTime);
+    track.currentTime = parseFloat(songRange.value || 0);
+    currentTimeText.innerHTML = formatTime(track.currentTime);
 }
 playlistImg.addEventListener("click",()=>{
     playlist.classList.toggle("playlist-active");

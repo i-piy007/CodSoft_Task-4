@@ -198,7 +198,7 @@ main{
     backdrop-filter: blur(5px);
     transform: translateX(-100%);
     transition: all 0.5s ;
-    box-shadow: 2px 2px 10px rgba(93, 92, 92, 0.8);
+    box-shadow: 2px 2px 20px rgba(144, 238, 144, 0.438);
     display: flex;
     flex-direction: column;
     gap:10px;
@@ -214,7 +214,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: rgba(255, 255, 255, 0.450);
+    background-color: rgba(75, 71, 71, 0.336);
     gap: 10px;
     cursor: pointer;
     width: 100%;
@@ -223,7 +223,7 @@ main{
     flex-shrink: 0;
 }
 .playlist-song:hover{
-    background-color: rgba(3, 3, 255, 0.562);
+    background-color: rgba(233, 233, 244, 0.195);
 }
 .playlist-song img{
     width: 100px;
@@ -260,24 +260,6 @@ main{
 #playlist-img{
     cursor: pointer;
 }
-
-
-@media (max-width: 700px){
-    main{
-        flex-direction: column;
-    }
-    .left, .right{
-        width: 100%;
-    }.song-image{
-        margin-top: 20px;
-        width:60vw;
-        height:60vh;
-    }
-    .playlist{
-        width:100%;
-    }
-}
-
 /* Smaller icons */
 #playlist-img,
 #music-img {
@@ -305,3 +287,4 @@ main{
     width: 90px;
     height: 90px;
 }
+
