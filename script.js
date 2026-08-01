@@ -38,6 +38,23 @@ let songs=[
         path:"img/Friday.mp3",
         image:"img/song3.jpg",
         artist:"Riton, Nightcrawlers, Mufasa & Hypeman"
+    },
+    {
+        name:"Othaiyadi Pathayila",
+        path:"img/Othaiyadi Pathayila.mp3",
+        image:"img/song4.jpg",
+        artist:"Dhibu Ninan Thomas, Anirudh Ravichander & Arunraja Kamaraj"
+    },
+    {
+        name:"I'm an Albatraoz",
+        path:"img/I'm an Albatraoz.mp3",
+        image:"img/song5.jpg",
+        artist:"AronChupa"
+    },{
+        name:"Vaari Jaavan",
+        path:"img/Vaari Jaavan.mp3",
+        image:"img/song6.jpg",
+        artist:"Shashwat Sachdev, Jyoti Nooran"
     }
     // can add more songs here
 ]
