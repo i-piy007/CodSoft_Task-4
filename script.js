@@ -5,6 +5,8 @@ let playPauseImage=document.querySelector("#play-pause")
 let volumeRange=document.querySelector("#volume-range")
 let volumeImg=document.querySelector("#volume-img")
 let songRange=document.querySelector("#song-duration")
+let currentTimeText=document.querySelector("#current-time")
+let totalTimeText=document.querySelector("#total-time")
 let musicAnim=document.querySelector("#musicanim")
 let playlistImg=document.querySelector("#playlist-img")
 let playlist=document.querySelector(".playlist")
@@ -12,6 +14,12 @@ let playlistSong=document.querySelectorAll(".playlist-song")
 let index=0;
 let playingSong=false;
 let track=document.createElement("audio")
+function formatTime(seconds){
+    if(!isFinite(seconds)) return "0:00";
+    let mins=Math.floor(seconds/60);
+    let secs=Math.floor(seconds%60);
+    return `${mins}:${secs<10?"0":""}${secs}`;
+}
 let songs=[
     {
         name:"Rafta Rafta",
@@ -42,9 +50,13 @@ function loadTrack(index){
     duration();
     track.currentTime=0;
     songRange.value=0;
+    currentTimeText.innerHTML="0:00";
+    totalTimeText.innerHTML="0:00";
     setInterval(() =>{
         songRange.max=track.duration;
         songRange.value=track.currentTime;
+        currentTimeText.innerHTML=formatTime(track.currentTime);
+        totalTimeText.innerHTML=formatTime(track.duration);
     },1000)
     track.loop=true; //which plays the same song again
     track.load();
@@ -107,6 +119,7 @@ function volume(){
 }
 function duration(){
     track.currentTime= songRange.value;
+    currentTimeText.innerHTML=formatTime(track.currentTime);
 }
 playlistImg.addEventListener("click",()=>{
     playlist.classList.toggle("playlist-active");
