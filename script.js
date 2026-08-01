@@ -9,25 +9,25 @@ let musicAnim=document.querySelector("#musicanim")
 let playlistImg=document.querySelector("#playlist-img")
 let playlist=document.querySelector(".playlist")
 let playlistSong=document.querySelectorAll(".playlist-song")
-let index=1;
+let index=0;
 let playingSong=false;
 let track=document.createElement("audio")
 let songs=[
     {
         name:"Rafta Rafta",
-        path:"img/song1.mp3",
+        path:"img/Rafta Rafta.mp3",
         image:"img/song1.jpg",
         artist:"Atif Aslam"
     },
     {
         name:"Kun Faya Kun",
-        path:"img/song2.mp3",
+        path:"img/Kun Faya Kun.mp3",
         image:"img/song2.jpg",
         artist:"A.R. Rahman, Javed Ali, Mohit Chauhan"
     },
     {
         name:"Friday",
-        path:"img/song3.mp3",
+        path:"img/Friday.mp3",
         image:"img/song3.jpg",
         artist:"Riton, Nightcrawlers, Mufasa & Hypeman"
     }
@@ -40,6 +40,8 @@ function loadTrack(index){
     songImage.style=`background-image: url("${songs[index].image}");`
     volume();
     duration();
+    track.currentTime=0;
+    songRange.value=0;
     setInterval(() =>{
         songRange.max=track.duration;
         songRange.value=track.currentTime;
@@ -95,7 +97,7 @@ function previousSong(){
     }
 }
 function volume(){
-    track.volume=volumneRange.value/100;
+    track.volume=volumeRange.value/100;
     if(volumeRange.value==0){
         volumeImg.src="img/mute.png";
     }
