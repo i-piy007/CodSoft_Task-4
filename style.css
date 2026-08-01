@@ -38,9 +38,13 @@ main{
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZPC4ZSbVwHH83WXjz6qg2MAvJcXilbMeSbpVFBxEYQ&s=10');
+    background-image: url("img/song1.jpg");
     background-position: center;
     background-size: cover;
+    box-shadow: inset 2px 2px 10px black, -2px -2px 10px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .volume-div{
     display: flex;
@@ -68,16 +72,20 @@ main{
     border-radius: 10px;
     background: linear-gradient(to right, lightgreen, rgb(0, 254, 207));
     outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black, -2px -2px 10px black;
 }
 #volume-range::-webkit-slider-thumb{
     -webkit-appearance: none;
     appearance: none;
     width: 18px;
     height: 18px;
-    background-color: rgb(147, 0, 246);
-    border: 2px solid white;
+    background-color: whitesmoke;
+    border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black, -2px -2px 10px black;
 }
 #volume-range::-webkit-slider-thumb:hover{
     transform: scale(120%);
@@ -120,6 +128,8 @@ main{
     border-radius: 10px;
     background: linear-gradient(to right, lightgreen, rgb(0, 254, 207));
     outline: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black, -2px -2px 10px black;
 }
 #song-duration::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -130,6 +140,8 @@ main{
     border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px black, -2px -2px 10px black;
 }
 #song-duration::-webkit-slider-thumb:hover{
     transform: scale(130%);
@@ -153,4 +165,14 @@ main{
     justify-content: center;
     box-shadow: 2px 2px 10px rgba(93, 92, 92, 0.8), -2px -2px 10px rgba(0, 0, 0, 0.8), -2px -2px 10px rgba(0, 0, 0, 0.8) , 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
-    
+.prev-img:hover, .play-pause:hover, .next-img:hover{
+    box-shadow: inset 2px 2px 10px rgba(93, 92, 92, 0.8),inset -2px -2px 10px rgba(0, 0, 0, 0.8),inset -2px -2px 10px rgba(0, 0, 0, 0.8),inset 2px 2px 10px rgba(0, 0, 0, 0.8);
+    transform: scale(90%);
+}
+#musicanim{
+    position: absolute;
+    display: none;
+    width: 425px;
+    height: 425px;
+    filter: drop-shadow(2px 4px 10px rgba(0, 255, 255, 0.64));
+}

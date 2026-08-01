@@ -16,27 +16,28 @@
     <main>
         <div class="left">
             <div class="song-image">
+                <img src="img/musicanim.gif" alt="musicanim" id="musicanim">
 
             </div>
             <div class="volume-div">
                 <div class="volume-img">
-                <img src="img/volume-up.png" alt="volume-up">
+                <img src="img/volume-up.png" alt="volume-up" id="volume-img">
                 </div>
-                <input type="range" id="volume-range">
+                <input type="range" id="volume-range" onchange="volume()">
             </div>
         </div>
         <div class="right">
             <div class="details">
-                <h3 id="song-name">Safar</h3>
-                <h5 id="song-artist">Bhuvan Bam</h5>
+                <h3 id="song-name">Rafta Rafta </h3>
+                <h5 id="song-artist">Atif Aslam</h5>
             </div>
-            <input type="range" id="song-duration">
+            <input type="range" id="song-duration" onchange="Duration()">
             <div class="controls">
-                <div class="prev-img"><img src="img/previous.png" alt="prev" id="prev-img" onclick="previous()">
+                <div class="prev-img"><img src="img/previous.png" alt="prev" id="prev-img" onclick="previousSong()">
                 </div>
-                <div class="play-pause"><img src="img/play.png" alt="play" id="play-pause" onclick="playPause()">
+                <div class="play-pause"><img src="img/play.png" alt="play-pause" id="play-pause" onclick="playPause()">
                 </div>
-                <div class="next-img"><img src="img/next.png" alt="next" id="next-img" onclick="next()">
+                <div class="next-img"><img src="img/next.png" alt="next" id="next-img" onclick="nextSong()">
                 </div>
                 
             </div>
