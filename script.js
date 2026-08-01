@@ -60,7 +60,7 @@ function playSong(){
     track.play();
     playingSong=true;
     playPauseImage.src="img/pause.png";
-    musicAnime.style.display="block";
+    musicAnim.style.display="block";
 
 
 }
@@ -68,7 +68,7 @@ function pauseSong(){
     track.pause();
     playingSong=false;
     playPauseImage.src="img/play.png";
-    musicAnime.style.display="none";
+    musicAnim.style.display="none";
 
 
 }
